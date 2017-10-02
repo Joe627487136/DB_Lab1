@@ -1,0 +1,261 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c100000\c0\c100000;\csgenericrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Lab1:\
+\
+\cf2 Commands to create related table:\cf0 \
+\
+CREATE TABLE book(\
+   title VARCHAR(255)  NOT NULL,\
+   form VARCHAR(255),\
+   numofpg INT,\
+   authors VARCHAR(255),\
+   publisher VARCHAR(255),\
+   yr DATE,\
+   edition VARCHAR(10),\
+   ISBN_10 VARCHAR(10) NOT NULL,	\
+   ISBN_13 VARCHAR(14) NOT NULL,\
+   PRIMARY KEY(ISBN_10),\
+   CHECK (form='paperback' or form='hardcover')\
+);\
+\
+\cf2 Create entry for one book:\cf0 \
+\
+Book details:\
+\pard\pardeftab720\partightenfactor0
+\cf0 Title: Database Management Systems\
+Form: Hardcover\
+Numofpg: 1104\
+Authors: Raghu Ramakrishnan, Johaes Gehrke\
+Publisher: McGraw-Hill\
+Yr: 2002-8-14\
+Edition: 3rd\
+ISBN_10: 0072465638\
+ISBN_13: 978-0072465631\
+\
+Commands:\
+\
+INSERT INTO book.book (\
+title, \
+form, \
+numofpg, \
+authors, \
+publisher, \
+yr, \
+edition, \
+ISBN_10,\
+ISBN_13\
+) \
+VALUES (\
+'Database Management Systems', \
+'Hardcover', \
+1104, \
+'Raghu Ramakrishnan, Johaes Gehrke', \
+'McGraw-Hill', \
+DATE '2002-8-14', \
+'3rd', \
+'0072465638',\
+'978-0072465631');\
+\
+\
+\cf2 Create entries for five books:\cf0 \
+\
+Book1:\
+Title: An Introduction to Database Systems\
+Form: Paperback\
+Numofpg: 1024\
+Authors: C.J.Date\
+Publisher: Pearson\
+Yr: 2003-8-1\
+Edition: 8nd\
+ISBN_10: 0321197844\
+ISBN_13: 978-0321197849\
+\
+Book2:\
+Title: SQL and Relational Theory: How to Write Accurate SQL Code\
+Form: Paperback\
+Numofpg: 448\
+Authors: C.J.Date\
+Publisher: O'Reilly Media\
+Yr: 2011-12-28\
+Edition: 3rd\
+ISBN_10: 1449316409\
+ISBN_13: 978-1449316402\
+\
+Book3:\
+Title: Database in Depth: Relational Theory for Practitioners\
+Form: Paperback\
+Numofpg: 232\
+Authors: C.J.Date\
+Publisher: O'Reilly Media\
+Yr: 2005-5-15\
+Edition: 1st\
+ISBN_10: 0596100124\
+ISBN_13: 978-0596100124\
+\
+Book4:\
+Title: Relational Theory for Computer Professionals: What Relational Databases Are Really All About (Theory in Practice)\
+Form: Paperback\
+Numofpg: 284\
+Authors: C.J.Date\
+Publisher: O'Reilly Media\
+Yr: 2013-6-3\
+Edition: 1st\
+ISBN_10: 144936943X\
+ISBN_13: 978-1449369439\
+\
+Book5:\
+Title: Type Inheritance and Relational Theory: Subtypes, Supertypes, and Substitutability\
+Form: Paperback\
+Numofpg: 572\
+Authors: C.J.Date\
+Publisher: O'Reilly Media\
+Yr: 2016-9-18\
+Edition: 1st\
+ISBN_10: 1491959991\
+ISBN_13: 978-1491959992\
+\
+Commands:\
+\
+INSERT INTO book.book (\
+title, \
+form, \
+numofpg, \
+authors, \
+publisher, \
+yr, \
+edition, \
+ISBN_10,\
+ISBN_13\
+) \
+VALUES \
+('An Introduction to Database Systems', \
+'Paperback', \
+1024, \
+'C.J.Date', \
+'Pearson', \
+DATE '2003-8-1', \
+'8nd', \
+'0321197844',\
+'978-0321197849'),\
+\
+('SQL and Relational Theory: How to Write Accurate SQL Code', \
+'Paperback', \
+448, \
+'C.J.Date', \
+'O''Reilly Media', \
+DATE '2011-12-28', \
+'3rd', \
+'1449316409',\
+'978-1449316402'),\
+\
+('Database in Depth: Relational Theory for Practitioners', \
+'Paperback', \
+232, \
+'C.J.Date', \
+'O''Reilly Media', \
+DATE '2005-5-15', \
+'1st', \
+'0596100124',\
+'978-0596100124'),\
+\
+('Relational Theory for Computer Professionals: What Relational Databases Are Really All About (Theory in Practice)', \
+'Paperback', \
+284, \
+'C.J.Date', \
+'O''Reilly Media', \
+DATE '2013-6-3', \
+'1st', \
+'144936943X',\
+'978-1449369439'),\
+\
+('Type Inheritance and Relational Theory: Subtypes, Supertypes, and Substitutability', \
+'Paperback', \
+572, \
+'C.J.Date', \
+'O''Reilly Media', \
+DATE '2016-9-18', \
+'1st', \
+'1491959991',\
+'978-1491959992')\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\cf2 \
+Query book table and output all books:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Commands:\
+\
+SELECT * FROM book.book;\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 Modify book with author C.J.Date:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Commands:\
+\
+SET SQL_SAFE_UPDATES = 0;\
+UPDATE book.book SET authors='Christopher J. Date' WHERE authors='C.J.DATE'\
+SET SQL_SAFE_UPDATES = 1;\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 Query title, authors, publisher, yr, edition, both ISBN_ID of the books:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Commands:\
+\
+SELECT title, authors, publisher, yr, edition, ISBN_10, ISBN_13 FROM book.book;\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 Query authors of the books:\cf3 \
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Commands:\
+\
+SELECT authors FROM book.book;\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 Query authors of the books called \'93Database Management Systems\'94:\cf3 \
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Commands:\
+\
+SELECT authors FROM book.book WHERE title='Database Management Systems';\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\cf2 Add language attribute:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Commands:\
+\
+ALTER TABLE book.book ADD language VARCHAR(25) DEFAULT 'English'\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 Delete row with buddy C.J.Date:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Commands:\
+\
+SET SQL_SAFE_UPDATES = 0;\
+UPDATE book.book SET authors='C.J.DATE' WHERE authors='Christopher J. Date'\
+DELETE FROM book.book WHERE authors='C.J.Date';\
+SET SQL_SAFE_UPDATES = 1;\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 Drop table:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Commands:\
+\
+DROP TABLE book.book;}
